@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= full_title(yield :title)%></title>
+    <%= favicon_link_tag(asset_path('rails.png')) %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,9 @@
 
   <body>
     <%= render 'layouts/nav' %>
+    <div class="container">
     <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
   </body>
 </html>
