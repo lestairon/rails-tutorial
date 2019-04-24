@@ -8,6 +8,7 @@ gem 'rails', '~> 5.2.3'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'bcrypt'
+gem 'rails-controller-testing'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
