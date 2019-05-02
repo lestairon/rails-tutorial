@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get  '/activate_user/:token', to: 'account_activations#edit', as: 'account_activation'
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :users
+  resources :microposts,      only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
