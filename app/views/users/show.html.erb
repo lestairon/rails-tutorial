@@ -12,7 +12,6 @@
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
-      <% byebug %>
         <%= render @microposts %>
       </ol>
       <%= will_paginate(@microposts, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
