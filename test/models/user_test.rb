@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
   def setup
     @user = User.new(name: 'Fernando', email: 'example@example.com', password: 'foobar', password_confirmation: 'foobar')
   end
@@ -81,4 +79,16 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+  test 'should follow and unfollow a user' do
+    fernando = users(:fernando)
+    lestairon = users(:lestairon)
+    assert_not fernando.following?(lestairon)
+    fernando.follow(lestairon)
+    assert fernando.following?(lestairon)
+    assert lestairon.followers.include?(fernando)
+    fernando.unfollow(lestairon)
+    assert_not fernando.following?(lestairon)
+  end
+
 end
